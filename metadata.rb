@@ -6,3 +6,4 @@ description      'Installs/Configures site-otrs-sectypo3org'
 long_description 'Installs/Configures site-otrs-sectypo3org'
 version          '0.1.0'
 
+depends 'perl', '= 0.10.0'
