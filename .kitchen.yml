@@ -15,3 +15,7 @@ suites:
     run_list:
       - recipe[site-otrs-sectypo3org::default]
     attributes:
+    driver_config:
+      network:
+      - ["forwarded_port", {guest: 80, host: 8086}]
+      - ["private_network", {ip: "192.168.33.35"}]
