@@ -6,7 +6,7 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: debian-7.4
+  - name: debian-7.8
     run_list:
     - recipe[apt::default]
 
@@ -15,7 +15,26 @@ suites:
     run_list:
       - recipe[site-otrs-sectypo3org::default]
     attributes:
+      mysql:
+        server_root_password: root
+      otrs:
+        fqdn: otrs.vagrant
+#        version: 4.0.14
+        version: 5.0.3
+      site-otrs-sectypo3org:
+         ssl_certificate: wildcard.vagrant
     driver_config:
       network:
-      - ["forwarded_port", {guest: 80, host: 8086}]
-      - ["private_network", {ip: "192.168.33.35"}]
+      - ["forwarded_port", {guest: 443, host: 8443}]
+      - ["private_network", {ip: "192.168.34.35"}]
+
+  - name: otrs-3
+    run_list:
+      - recipe[site-otrs-sectypo3org::default]
+    attributes:
+      mysql:
+        server_root_password: root
+      otrs:
+        version: 3.3.15
+      site-otrs-sectypo3org:
+         ssl_certificate: wildcard.vagrant

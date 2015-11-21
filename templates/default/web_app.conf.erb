@@ -14,8 +14,17 @@
   DirectoryIndex index.pl index.html index.html
 
   SSLEngine on
-  SSLCertificateFile    <% node[:otrs][:apache][:ssl_cert] %>
-  SSLCertificateKeyFile <% node[:otrs][:apache][:ssl_key] %>
+  SSLCertificateFile    <%= node['ssl_certificates']['path'] + "/" + node['site-otrs-sectypo3org']['ssl_certificate'] + ".crt" %>
+  SSLCertificateKeyFile <%= node['ssl_certificates']['path'] + "/" + node['site-otrs-sectypo3org']['ssl_certificate'] + ".key" %>
+
+  SSLProtocol All -SSLv2 -SSLv3
+  SSLHonorCipherOrder On
+  SSLCompression off
+
+  # Add six earth month HSTS header for all users...
+  Header set Strict-Transport-Security "max-age=15768000"
+
+  SSLCipherSuite 'EDH+CAMELLIA:EDH+aRSA:EECDH+aRSA+AESGCM:EECDH+aRSA+SHA384:EECDH+aRSA+SHA256:EECDH:+CAMELLIA256:+AES256:+CAMELLIA128:+AES128:+SSLv3:!aNULL:!eNULL:!LOW:!3DES:!MD5:!EXP:!PSK:!DSS:!RC4:!SEED:!ECDSA:CAMELLIA256-SHA:AES256-SHA:CAMELLIA128-SHA:AES128-SHA'
 
   LogLevel info
   ErrorLog <%= node[:apache][:log_dir] %>/<%= @params[:name] %>-error.log
@@ -94,11 +103,9 @@
   </IfModule>
 
   <Location />
-    AuthType Digest
-    AuthName "t3secteam"
-    AuthDigestDomain /wiki/ http://securityteam.typo3.org/wiki/
-    AuthDigestProvider file
-    AuthUserFile /root/htaccess/.htpasswd
+    AuthType Basic
+    AuthName "Authentication Required"
+    AuthUserFile "/etc/htpasswd/.htpasswd"
     Require valid-user
   </Location>
 
