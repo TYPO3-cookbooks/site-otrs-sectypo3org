@@ -1,4 +1,44 @@
-# bar-cookbook
+# Description
 
-TODO: Enter the cookbook description here.
+Manages OTRS for TYPO3 Security Team.
 
+Users can be managed in `/root/otrs.htpasswd` (a symlink to `/etc/htpasswd/.htpasswd`).
+
+# Requirements
+
+## Platform:
+
+* debian
+
+## Cookbooks:
+
+* otrs (~> 1.2.0)
+* t3-chef-vault
+* ssl_certificates
+
+# Attributes
+
+* `node['otrs']['apache2']['vhost_source']` -  Defaults to `site-otrs-sectypo3org`.
+* `node['otrs']['kernel_config']['email']` -  Defaults to `otrs@typo3.org`.
+* `node['otrs']['kernel_config']['organization']` -  Defaults to `TYPO3 Association`.
+* `node['site-otrs-sectypo3org']['ssl_certificate']` -  Defaults to `wildcard.typo3.org`.
+
+# Recipes
+
+* [site-otrs-sectypo3org::default](#site-otrs-sectypo3orgdefault) - Customizes our [OTRS cookbook](https://github.com/TYPO3-cookbooks/otrs) to be used for this instance.
+
+## site-otrs-sectypo3org::default
+
+Customizes our [OTRS cookbook](https://github.com/TYPO3-cookbooks/otrs) to be used for this instance.
+
+Brings the SSL certificate, adds HTTP Basic auth protection.
+
+# PGP/GPG Setup
+
+The PGP setup has to be done manually (files in `/opt/otrs/.gnupg`). Those files have to be readable for the web site user.
+
+# License and Maintainer
+
+Maintainer:: Steffen Gebert (<steffen.gebert@typo3.org>)
+
+License:: Apache2
