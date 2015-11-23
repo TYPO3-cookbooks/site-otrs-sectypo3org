@@ -1,3 +1,6 @@
+#<> OTRS version to run
+default['otrs']['version'] = "5.0.3"
+
 #<> override the default vhost template
 default['otrs']['apache2']['vhost_source'] = "site-otrs-sectypo3org"
 
