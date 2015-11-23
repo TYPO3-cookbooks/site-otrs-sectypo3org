@@ -18,10 +18,11 @@ Users can be managed in `/root/otrs.htpasswd` (a symlink to `/etc/htpasswd/.htpa
 
 # Attributes
 
-* `node['otrs']['apache2']['vhost_source']` -  Defaults to `site-otrs-sectypo3org`.
-* `node['otrs']['kernel_config']['email']` -  Defaults to `otrs@typo3.org`.
-* `node['otrs']['kernel_config']['organization']` -  Defaults to `TYPO3 Association`.
-* `node['site-otrs-sectypo3org']['ssl_certificate']` -  Defaults to `wildcard.typo3.org`.
+* `node['otrs']['version']` - OTRS version to run. Defaults to `5.0.3`.
+* `node['otrs']['apache2']['vhost_source']` - override the default vhost template. Defaults to `site-otrs-sectypo3org`.
+* `node['otrs']['kernel_config']['email']` - Setup email address. Defaults to `otrs@typo3.org`.
+* `node['otrs']['kernel_config']['organization']` - Setup organization name. Defaults to `TYPO3 Association`.
+* `node['site-otrs-sectypo3org']['ssl_certificate']` - Name of the SSL certificate to deploy. Defaults to `wildcard.typo3.org`.
 
 # Recipes
 
