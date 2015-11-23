@@ -38,9 +38,6 @@ end
 include_recipe "otrs"
 include_recipe "otrs::_apache"
 
-# disable managing the ZZZAuto.pm via OTRS (as the GPG key secret is stored there)
-resources("template[SysConfig]").action :nothing
-
 ######################
 # .htaccess protection
 ######################
