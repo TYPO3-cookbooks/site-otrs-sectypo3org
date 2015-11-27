@@ -103,9 +103,11 @@
   </IfModule>
 
   <Location />
-    AuthType Basic
-    AuthName "Authentication Required"
+    AuthType Digest
+    AuthName "t3secteam"
+    AuthDigestProvider file
     AuthUserFile "/etc/htpasswd/.htpasswd"
+    AuthDigestDomain /
     Require valid-user
   </Location>
 

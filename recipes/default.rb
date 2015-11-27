@@ -42,6 +42,8 @@ include_recipe "otrs::_apache"
 # .htaccess protection
 ######################
 
+apache_module "auth_digest"
+
 directory "/etc/htpasswd" do
   owner node['apache']['user']
   group node['apache']['group']
@@ -51,8 +53,8 @@ end
 file "/etc/htpasswd/.htpasswd" do
   mode 00644
   content <<-EOQ
-# Add your users here. This file will *not* be overwritten by Chef.
-test:$apr1$iidemMPy$vYjgojX5gR1v8riYG2EnK.
+# Remove this content, add your users here. This file will not be overwritten by Chef.
+test:t3secteam:a737bee3ea4dde6d8e4c9247c1e686d8
 EOQ
   action :create_if_missing
 end
