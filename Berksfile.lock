@@ -36,7 +36,7 @@ GRAPH
     apt (>= 1.9.0)
     build-essential (>= 0.0.0)
     openssl (~> 4.0)
-  site-otrs-sectypo3org (1.0.1)
+  site-otrs-sectypo3org (1.0.2)
     otrs (~> 1.2.0)
     ssl_certificates (>= 0.0.0)
     t3-chef-vault (>= 0.0.0)
