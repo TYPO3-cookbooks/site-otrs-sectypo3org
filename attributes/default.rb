@@ -1,6 +1,9 @@
 #<> OTRS version to run
 default['otrs']['version'] = "5.0.3"
 
+#<> Set FQDN
+default['otrs']['fqdn'] = "otrs-sec.typo3.org"
+
 #<> override the default vhost template
 default['otrs']['apache2']['vhost_source'] = "site-otrs-sectypo3org"
 
