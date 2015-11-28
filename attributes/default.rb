@@ -2,10 +2,10 @@
 default['otrs']['version'] = "5.0.3"
 
 #<> Set FQDN
-default['otrs']['fqdn'] = "otrs-sec.typo3.org"
+default['otrs']['fqdn'] = "securityteam.typo3.org"
 
 #<> override the default vhost template
-default['otrs']['apache2']['vhost_source'] = "site-otrs-sectypo3org"
+default['otrs']['apache2']['vhost_source'] = "site-securityteamtypo3org"
 
 #<> Setup email address
 default['otrs']['kernel_config']['email'] = "otrs@typo3.org"
@@ -13,4 +13,4 @@ default['otrs']['kernel_config']['email'] = "otrs@typo3.org"
 default['otrs']['kernel_config']['organization'] = "TYPO3 Association"
 
 #<> Name of the SSL certificate to deploy
-default['site-otrs-sectypo3org']['ssl_certificate'] = "wildcard.typo3.org"
+default['site-securityteamtypo3org']['ssl_certificate'] = "wildcard.typo3.org"

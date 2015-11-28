@@ -14,8 +14,8 @@
   DirectoryIndex index.pl index.html index.html
 
   SSLEngine on
-  SSLCertificateFile    <%= node['ssl_certificates']['path'] + "/" + node['site-otrs-sectypo3org']['ssl_certificate'] + ".crt" %>
-  SSLCertificateKeyFile <%= node['ssl_certificates']['path'] + "/" + node['site-otrs-sectypo3org']['ssl_certificate'] + ".key" %>
+  SSLCertificateFile    <%= node['ssl_certificates']['path'] + "/" + node['site-securityteamtypo3org']['ssl_certificate'] + ".crt" %>
+  SSLCertificateKeyFile <%= node['ssl_certificates']['path'] + "/" + node['site-securityteamtypo3org']['ssl_certificate'] + ".key" %>
 
   SSLProtocol All -SSLv2 -SSLv3
   SSLHonorCipherOrder On

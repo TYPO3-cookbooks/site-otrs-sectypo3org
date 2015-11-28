@@ -1,4 +1,4 @@
-name             "site-otrs-sectypo3org"
+name             "site-securityteamtypo3org"
 maintainer       "Steffen Gebert"
 maintainer_email "steffen.gebert@typo3.org"
 license          "Apache2"

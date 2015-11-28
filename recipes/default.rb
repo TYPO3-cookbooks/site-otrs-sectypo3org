@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: site-otrs-sectypo3org
+# Cookbook Name:: site-securityteamtypo3org
 # Recipe:: default
 #
 # Copyright 2015, TYPO3 Association
@@ -28,7 +28,7 @@ Brings the SSL certificate, adds HTTP Basic auth protection.
 
 include_recipe "ssl_certificates"
 
-ssl_certificate node['site-otrs-sectypo3org']['ssl_certificate'] do
+ssl_certificate node['site-securityteamtypo3org']['ssl_certificate'] do
   ca_bundle_combined true
 end
 
@@ -37,6 +37,14 @@ end
 ######################
 include_recipe "otrs"
 include_recipe "otrs::_apache"
+
+######################
+# MySQL
+######################
+
+include_recipe "t3-mysql::server"
+include_recipe "t3-mysql::backup"
+
 
 ######################
 # .htaccess protection
