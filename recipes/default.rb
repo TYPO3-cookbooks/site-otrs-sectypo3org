@@ -39,14 +39,6 @@ include_recipe "otrs"
 include_recipe "otrs::_apache"
 
 ######################
-# MySQL
-######################
-
-include_recipe "t3-mysql::server"
-include_recipe "t3-mysql::backup"
-
-
-######################
 # .htaccess protection
 ######################
 
