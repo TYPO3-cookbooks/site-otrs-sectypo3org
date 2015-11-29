@@ -24,7 +24,7 @@ GRAPH
     mysql (>= 0.0.0)
   openssl (4.4.0)
     chef-sugar (>= 3.1.1)
-  otrs (1.2.2)
+  otrs (1.2.3)
     apache2 (= 3.1.0)
     build-essential (= 2.0.6)
     cron (= 1.4.3)
