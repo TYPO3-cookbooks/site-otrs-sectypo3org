@@ -5,7 +5,7 @@ default['otrs']['version'] = "5.0.3"
 default['otrs']['fqdn'] = "securityteam.typo3.org"
 
 #<> override the default vhost template
-default['otrs']['apache2']['vhost_source'] = "site-securityteamtypo3org"
+default['otrs']['apache']['vhost_source'] = "site-securityteamtypo3org"
 
 #<> Setup email address
 default['otrs']['kernel_config']['email'] = "otrs@typo3.org"
