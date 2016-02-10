@@ -25,6 +25,7 @@ Brings the SSL certificate, adds HTTP Basic auth protection.
 #>
 =end
 
+include_recipe "t3-base"
 
 include_recipe "ssl_certificates"
 

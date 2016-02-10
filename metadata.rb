@@ -8,6 +8,8 @@ version          "1.0.7"
 
 supports         "debian"
 
+depends          "t3-base",          "~> 0.2.0"
+
 depends          "otrs",             "~> 1.2.0"
 depends          "t3-apache2",       "~> 0.1.2"
 depends          "t3-mysql",         "~> 5.0.0"
