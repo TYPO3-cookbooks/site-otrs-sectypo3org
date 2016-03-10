@@ -102,7 +102,7 @@ GRAPH
   runit (1.7.6)
     packagecloud (>= 0.0.0)
   screen (0.7.0)
-  site-securityteamtypo3org (1.0.8)
+  site-securityteamtypo3org (1.0.9)
     build-essential (= 2.0.6)
     otrs (~> 1.2.0)
     perl (= 2.0.0)
