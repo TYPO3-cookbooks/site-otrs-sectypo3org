@@ -4,7 +4,7 @@ maintainer_email "steffen.gebert@typo3.org"
 license          "Apache2"
 description      "Chef cookbook for the OTRS for the TYPO3 Security Team"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "1.0.10"
+version          "1.0.11"
 
 supports         "debian"
 
