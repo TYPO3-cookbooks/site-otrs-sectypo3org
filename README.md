@@ -12,15 +12,19 @@ Users can be managed in `/root/otrs.htpasswd` (a symlink to `/etc/htpasswd/.htpa
 
 ## Cookbooks:
 
+* t3-base (~> 0.2.0)
 * otrs (~> 1.2.0)
-* t3-chef-vault
-* ssl_certificates
+* t3-apache2 (~> 0.1.2)
+* t3-mysql (~> 5.0.0)
+* ssl_certificates (~> 1.1.0)
+* build-essential (= 2.0.6)
+* perl (= 2.0.0)
 
 # Attributes
 
-* `node['otrs']['version']` - OTRS version to run. Defaults to `5.0.3`.
+* `node['otrs']['version']` - OTRS version to run. Defaults to `5.0.15`.
 * `node['otrs']['fqdn']` - Set FQDN. Defaults to `securityteam.typo3.org`.
-* `node['otrs']['apache2']['vhost_source']` - override the default vhost template. Defaults to `site-securityteamtypo3org`.
+* `node['otrs']['apache']['vhost_source']` - override the default vhost template. Defaults to `site-securityteamtypo3org`.
 * `node['otrs']['kernel_config']['email']` - Setup email address. Defaults to `otrs@typo3.org`.
 * `node['otrs']['kernel_config']['organization']` - Setup organization name. Defaults to `TYPO3 Association`.
 * `node['site-securityteamtypo3org']['ssl_certificate']` - Name of the SSL certificate to deploy. Defaults to `wildcard.typo3.org`.
@@ -34,6 +38,13 @@ Users can be managed in `/root/otrs.htpasswd` (a symlink to `/etc/htpasswd/.htpa
 Customizes our [OTRS cookbook](https://github.com/TYPO3-cookbooks/otrs) to be used for this instance.
 
 Brings the SSL certificate, adds HTTP Basic auth protection.
+
+# Credentials
+
+The following default credentials are set:
+
+* HTTP Authentication: `test` / `test`
+* OTRS: `root@localhost` / `root`
 
 # PGP/GPG Setup
 
