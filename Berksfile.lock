@@ -95,7 +95,7 @@ GRAPH
     packagecloud (>= 0.0.0)
     yum-epel (>= 0.0.0)
   screen (0.7.0)
-  site-securityteamtypo3org (1.0.11)
+  site-securityteamtypo3org (1.0.12)
     build-essential (= 2.0.6)
     otrs (~> 1.2.0)
     perl (= 2.0.0)
