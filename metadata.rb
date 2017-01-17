@@ -10,10 +10,10 @@ supports         "debian"
 
 depends          "t3-base",          "~> 0.2.0"
 
-depends          "otrs",             "~> 1.2.0"
-depends          "t3-apache2",       "~> 0.1.2"
-depends          "t3-mysql",         "~> 5.0.0"
+depends          "otrs",             "~> 2.1.0"
 depends          "ssl_certificates", "~> 1.1.0"
 
-depends          "build-essential",  "= 2.0.6"
 depends          "perl",             "= 2.0.0"
+
+# just for kicking berks - it was not able to compute a solution otherwise
+depends "php", "< 2.2.0"
