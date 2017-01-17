@@ -9,9 +9,7 @@ version          "1.0.11"
 supports         "debian"
 
 depends          "t3-base",          "~> 0.2.0"
-
 depends          "otrs",             "~> 2.1.0"
-depends          "ssl_certificates", "~> 1.1.0"
 
 depends          "perl",             "= 2.0.0"
 
