@@ -7,11 +7,16 @@ provisioner:
 
 platforms:
   - name: debian-7.10
+  - name: debian-8.5
+
+verifier:
+  name: inspec
 
 suites:
   - name: default
     run_list:
       - recipe[site-securityteamtypo3org::default]
+      - recipe[otrs_test::hostname]
     attributes:
       mysql:
         server_root_password: root
