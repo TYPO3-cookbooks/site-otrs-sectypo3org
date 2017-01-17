@@ -9,6 +9,7 @@
   ErrorLog <%= node[:apache][:log_dir] %>/<%= @params[:name] %>-error.log
   CustomLog <%= node[:apache][:log_dir] %>/<%= @params[:name] %>-access.log combined
 
+
   <Location />
     AuthType Digest
     AuthName "t3secteam"
@@ -52,12 +53,25 @@
         Options +ExecCGI
         PerlOptions +ParseHeaders
         PerlOptions +SetupEnv
-        Require all granted
+
+        AuthType Digest
+        AuthName "t3secteam"
+        AuthDigestProvider file
+        AuthUserFile "/etc/htpasswd/.htpasswd"
+        AuthDigestDomain /
+        Require valid-user
     </Location>
 
     # set mod_perl2 option for generic interface
     <Location /otrs/nph-genericinterface.pl>
         PerlOptions -ParseHeaders
+
+        AuthType Digest
+        AuthName "t3secteam"
+        AuthDigestProvider file
+        AuthUserFile "/etc/htpasswd/.htpasswd"
+        AuthDigestDomain /
+        Require valid-user
     </Location>
 
   </IfModule>
@@ -66,11 +80,11 @@
   <Directory "<%= node[:otrs][:prefix] %>/otrs/bin/cgi-bin/">
     AllowOverride None
     Options +ExecCGI -Includes
-    Require all granted
+    Require valid-user
   </Directory>
   <Directory <%= node[:otrs][:prefix] %>/otrs/var/httpd/htdocs/">
     AllowOverride None
-    Require all granted
+    Require valid-user
   </Directory>
 
   <IfModule mod_headers.c>
