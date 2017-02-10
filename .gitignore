@@ -16,3 +16,6 @@ bin/*
 .kitchen.local.yml
 .idea/
 tmp/
+
+# thor-scmversion
+VERSION
