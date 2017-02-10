@@ -8,7 +8,7 @@ version          "1.0.11"
 
 supports         "debian"
 
-depends          "t3-base",          "~> 0.2.0"
+depends          "t3-base",          "~> 0.2.60"
 depends          "otrs",             "~> 2.1.0"
 
 depends          "perl",             "= 4.0.0"
