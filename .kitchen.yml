@@ -6,20 +6,23 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: debian-7.10
+  - name: debian-8.5
+
+verifier:
+  name: inspec
 
 suites:
   - name: default
     run_list:
       - recipe[site-securityteamtypo3org::default]
+      - recipe[otrs_test::hostname]
     attributes:
       mysql:
         server_root_password: root
       otrs:
         fqdn: otrs.vagrant
-        version: 5.0.14
-      site-securityteamtypo3org:
-         ssl_certificate: wildcard.vagrant
+      apt:
+        compile_time_update: true
     driver_config:
       network:
       - ["forwarded_port", {guest: 443, host: 8443, auto_correct: true}]
