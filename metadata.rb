@@ -11,6 +11,7 @@ supports         "debian"
 depends          "t3-base",          "~> 0.2.60"
 depends          "otrs",             "~> 2.1.0"
 
+depends          "apache2",          "= 3.2.2"
 depends          "perl",             "= 4.0.0"
 
 # just for kicking berks - it was not able to compute a solution otherwise
