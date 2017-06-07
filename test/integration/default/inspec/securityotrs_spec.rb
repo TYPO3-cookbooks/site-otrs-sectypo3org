@@ -3,7 +3,7 @@ control 'securityotrs-1' do
 
   describe port(80) do
     it { should be_listening }
-    its('protocols') { should include 'tcp6'}
+    its('protocols') { should include 'tcp'}
   end
 
   describe command('curl -I http://otrs.vagrant') do
