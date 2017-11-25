@@ -48,7 +48,7 @@ The following default credentials are set:
 
 # PGP/GPG Setup
 
-The PGP setup has to be done manually (files in `/opt/otrs/.gnupg`). Those files have to be readable for the web site user.
+The PGP setup has to be done manually (files in `/opt/otrs/.gnupg`). Those files have to be readable for the web site user. List GPG keys with `gpg --list-keys --homedir /opt/otrs-gnupg`, get the expiring key, edit the key with `gpg --homedir /opt/otrs-gnupg --edit-key <KEY-ID>`, use `key <NUM>` to select the key and the `expire` command to update the expiration time for the relevant keys. End with `save` and set proper ownership and permissions on the keyfiles afterwards.
 
 # License and Maintainer
 
