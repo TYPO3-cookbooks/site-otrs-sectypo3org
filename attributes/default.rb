@@ -1,5 +1,5 @@
 #<> OTRS version to run
-default['otrs']['version'] = "5.0.25"
+default['otrs']['version'] = "5.0.28"
 
 #<> Set FQDN
 default['otrs']['fqdn'] = "securityteam.typo3.org"
