@@ -8,8 +8,9 @@ version          IO.read(File.join(File.dirname(__FILE__), 'VERSION')) rescue '0
 
 supports         "debian"
 
-depends          "t3-base",          "~> 0.2.60"
+depends          "t3-base",          "~> 0.2.0"
 depends          "otrs",             "~> 2.1.0"
+depends          "postfix",          "~> 5.3.0"
 
 depends          "apache2",          "= 3.2.2"
 depends          "perl",             "= 4.0.0"
