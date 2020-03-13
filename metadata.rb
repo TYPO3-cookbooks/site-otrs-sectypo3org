@@ -17,3 +17,4 @@ depends          "perl",             "= 4.0.0"
 
 # just for kicking berks - it was not able to compute a solution otherwise
 depends "php", "< 2.2.0"
+depends "iptables", "< 5.0"
